@@ -25,6 +25,7 @@
 
  form {
     border-bottom: 1px solid hsl(0, 0%, 86%);
+    height: 150px;
  }
 
  .flex-container {
@@ -48,9 +49,17 @@
     border: 1px solid hsl(0, 0%, 86%);
     border-radius: 5px;
     font-size: 24px;
-    margin-left: 15px;
     padding: 5px;
     width: 80px;
+ }
+
+ .warning-message {
+   visibility: hidden;
+   color: hsl(0, 100%, 67%);
+   font-style: italic;
+   font-size: 6px;
+   margin-top: 5px;
+   width: 80px;
  }
 
  .arrow {
@@ -59,7 +68,7 @@
     border-radius: 50%;
     padding: 15px;
     position: relative;
-    top: 40px;
+    top: 30px;
     left: 140px;
     transition: ease-in-out 300ms;
  }
@@ -90,4 +99,9 @@
 
  .attribution a {
      color: hsl(228, 45%, 44%);
+ }
+
+
+ #active{
+   visibility: visible;
  }
