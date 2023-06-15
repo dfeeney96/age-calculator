@@ -42,15 +42,25 @@ submit.addEventListener("click", function(){
     selectedMonth = Number(document.getElementById("month").value);
     selectedYear = Number(document.getElementById("year").value);
 
+    let maxNumberOfDays;
+
+
+   monthsOfYear.forEach(function(monthOfYear) {
+        if(monthOfYear.month == selectedMonth){
+            maxNumberOfDays = monthOfYear.days;
+           
+        }
+    }) 
+    
     
 
-    if(selectedDay == "" || selectedMonth == "" || selectedYear == "" || selectedYear > currentYear){
-        if(selectedDay == ""){
+    if(selectedDay == "" || selectedMonth == "" || selectedYear == "" || selectedDay > maxNumberOfDays || selectedMonth > 12 ||selectedYear > currentYear ){
+        if(selectedDay == "" || selectedDay > maxNumberOfDays){
             
             dayWarning.innerText = "Must be a valid date";
             dayWarning.setAttribute("id", "active");
         }
-        if(selectedMonth ==""){
+        if(selectedMonth =="" || selectedMonth > 12){
             
             monthWarning.innerText = "Must be a valid month";
             monthWarning.setAttribute("id", "active");
