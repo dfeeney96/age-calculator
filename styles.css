@@ -18,14 +18,15 @@
  .card {
     background-color: hsl(0, 0%, 100%);
     border-radius: 30px 30px 130px  30px;
-    width: 375px;
+    width: 300px;
     padding: 50px 30px;
  }
 
 
  form {
     border-bottom: 1px solid hsl(0, 0%, 86%);
-    height: 150px;
+    height: 100px;
+    
  }
 
  .flex-container {
@@ -41,16 +42,19 @@
 
  label {
     color: hsl(0, 1%, 44%);
-    font-size: 16px;
+    font-size: 12px;
     margin-bottom: 5px;
  }
 
  input {
     border: 1px solid hsl(0, 0%, 86%);
     border-radius: 5px;
-    font-size: 24px;
+    color: hsl(0, 0%, 8%);
+    font-size: 18px;
+    font-weight: bold;
     padding: 5px;
     width: 80px;
+
  }
 
  .warning-message {
@@ -68,9 +72,14 @@
     border-radius: 50%;
     padding: 15px;
     position: relative;
-    top: 30px;
-    left: 140px;
+    bottom: 5px;
+    left: 120px;
     transition: ease-in-out 300ms;
+    
+ }
+
+ .arrow img {
+   width: 30px;
  }
 
  .arrow:hover{
@@ -79,7 +88,7 @@
  }
 
  .display {
-    font-size: 56px;
+    font-size: 46px;
     font-weight: 800;
     font-style: italic;
     margin-top: 50px;
@@ -104,4 +113,39 @@
 
  #active{
    visibility: visible;
+ }
+
+ #incorrect-label {
+   color: hsl(0, 100%, 67%);
+ }
+
+ .incorrect-input {
+   border: 1px solid hsl(0, 100%, 67%);
+ }
+
+ @media (min-width: 1000px){
+   .card {
+      width: 600px;
+   }
+
+   .flex-container{
+      justify-content: flex-start;
+   }
+
+   input {
+      font-size: 24px;
+      padding: 10px;
+      margin-right: 20px;
+   }
+
+   .arrow {
+      bottom: 25px;
+      left: 545px;
+   }
+
+   .display {
+      margin-top: 30px;
+      font-size: 56px;
+   }
+
  }

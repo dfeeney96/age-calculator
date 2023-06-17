@@ -7,7 +7,7 @@ let monthsOfYear = [
     {month: 6, days: 30},
     {month: 7, days: 31},
     {month: 8, days: 31},
-    {month: 9, days: 31},
+    {month: 9, days: 30},
     {month: 10, days: 30},
     {month: 11, days: 30},
     {month: 12,days: 31}
@@ -26,6 +26,14 @@ const submit = document.querySelector("button");
 const dayText = document.querySelector(".day .digit");
 const monthText = document.querySelector(".month .digit");
 const yearText = document.querySelector(".year .digit");
+
+const dayLabel = document.querySelector(".day label");
+const monthLabel = document.querySelector(".month label");
+const yearLabel = document.querySelector(".year label");
+
+const dayInput = document.querySelector(".day input");
+const monthInput = document.querySelector(".month input");
+const yearInput = document.querySelector(".year input");
 
 const dayWarning = document.querySelector(".day .warning-message");
 const monthWarning = document.querySelector(".month .warning-message");
@@ -56,18 +64,22 @@ submit.addEventListener("click", function(){
 
     if(selectedDay == "" || selectedMonth == "" || selectedYear == "" || selectedDay > maxNumberOfDays || selectedMonth > 12 ||selectedYear > currentYear ){
         if(selectedDay == "" || selectedDay > maxNumberOfDays){
-            
             dayWarning.innerText = "Must be a valid date";
             dayWarning.setAttribute("id", "active");
+            dayLabel.setAttribute("id", "incorrect-label");
+            dayInput.classList.add("incorrect-input");
         }
         if(selectedMonth =="" || selectedMonth > 12){
             
             monthWarning.innerText = "Must be a valid month";
             monthWarning.setAttribute("id", "active");
+            monthLabel.setAttribute("id", "incorrect-label");
+            monthInput.classList.add("incorrect-input");
         }
         if(selectedYear =="" || selectedYear > currentYear ){
-                        
             yearWarning.setAttribute("id", "active");
+            yearLabel.setAttribute("id", "incorrect-label");
+            yearInput.classList.add("incorrect-input");
             if(selectedYear > currentYear){
                 yearWarning.innerText = "Must be in the past";
             } else {
@@ -77,12 +89,18 @@ submit.addEventListener("click", function(){
     } else {
         if(dayWarning.getAttribute("id") =="active"){
             dayWarning.removeAttribute("id", "active")
+            dayLabel.removeAttribute("id", "incorrect-label")
+            dayInput.classList.remove("incorrect-input");
         }
         if(monthWarning.getAttribute("id") =="active"){
-            monthWarning.removeAttribute("id", "active")
+            monthWarning.removeAttribute("id", "active");
+            monthLabel.removeAttribute("id", "incorrect-label");
+            monthInput.classList.remove("incorrect-input");
         }
         if(yearWarning.getAttribute("id") =="active"){
-            yearWarning.removeAttribute("id", "active")
+            yearWarning.removeAttribute("id", "active");
+            yearLabel.removeAttribute("id", "incorrect-label");
+            yearInput.classList.remove("incorrect-input");
         }
 
 
